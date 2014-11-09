@@ -1,0 +1,44 @@
+/*
+ * To change this template, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package ZombieCrushSaga.events;
+
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import ZombieCrushSaga.data.ZombieCrushSagaDataModel;
+import ZombieCrushSaga.ui.ZombieCrushSagaMiniGame;
+
+
+/**
+ *
+ * @author zhenjwang
+ */
+public class BackHandler implements ActionListener {
+     // HERE'S THE GAME WE'LL UPDATE
+    private ZombieCrushSagaMiniGame game;
+   // private ZombieCrushSaga mahJong;
+    /**
+     * This constructor just stores the game for later.
+     * 
+     * @param initGame the game to update
+     */
+    public BackHandler(ZombieCrushSagaMiniGame initGame)
+    {
+        game = initGame;
+    }
+    
+   
+    @Override
+    public void actionPerformed(ActionEvent ae)
+    { 
+           ZombieCrushSagaDataModel data = (ZombieCrushSagaDataModel)game.getDataModel();
+       //    data.endGameAsLoss();
+         //  if(game.getDataModel().inProgress())
+           //    game.getDataModel().endGameAsLoss();
+                game.switchToLevelScoreScreen();
+         
+    }
+
+   
+}

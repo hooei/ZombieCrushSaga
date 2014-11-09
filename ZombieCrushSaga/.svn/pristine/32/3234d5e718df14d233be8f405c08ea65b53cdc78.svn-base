@@ -1,0 +1,61 @@
+/*
+ * To change this template, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package ZombieCrushSaga.events;
+
+import ZombieCrushSaga.ZombieCrushSaga;
+import static ZombieCrushSaga.ZombieCrushSagaConstants.SAGA_SCREEN_STATE;
+import ZombieCrushSaga.data.ZombieCrushSagaDataModel;
+import ZombieCrushSaga.ui.ZombieCrushSagaMiniGame;
+import ZombieCrushSaga.ui.ZombieCrushSagaPanel;
+import java.awt.Point;
+import java.awt.Rectangle;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.image.BufferedImage;
+import javax.swing.JPanel;
+
+import properties_manager.PropertiesManager;
+
+/**
+ *
+ * @author English
+ */
+public class DownHandler  implements ActionListener{
+     private ZombieCrushSagaMiniGame miniGame;
+     private ZombieCrushSagaDataModel data;
+      
+    public DownHandler(ZombieCrushSagaMiniGame initMiniGame)
+    {
+        miniGame = initMiniGame;
+       // this.scroll=initMiniGame.getCanvas();
+    }
+     @Override
+    public void actionPerformed(ActionEvent ae)
+    {   
+        if(miniGame.isCurrentScreenState(SAGA_SCREEN_STATE)){
+      /*  PropertiesManager props = PropertiesManager.getPropertiesManager();
+        BufferedImage img;
+        String imgPath = props.getProperty(ZombieCrushSaga.ZombieCrushSagaPropertyType.IMG_PATH); 
+  
+        ZombieCrushSagaPanel sp=new ZombieCrushSagaPanel(miniGame,data);
+        JPanel canvas=miniGame.getCanvas(); 
+        Rectangle rc=canvas.getBounds();
+        Point pt=rc.getLocation();
+
+           pt.y+=10;
+ 
+        rc.setLocation(pt);
+        
+        canvas.setBounds(rc);
+      miniGame.resetSagaButtons(pt.y);*/
+        
+       miniGame.moveDown();
+        
+       
+       
+        }
+    }
+     
+}

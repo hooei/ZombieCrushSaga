@@ -1,0 +1,63 @@
+/*
+ * To change this template, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package ZombieCrushSaga.events;
+
+import ZombieCrushSaga.data.ZombieCrushSagaDataModel;
+import ZombieCrushSaga.file.ZombieCrushSagaFileManager;
+import ZombieCrushSaga.ui.ZombieCrushSagaMiniGame;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+/**
+ *
+ * @author wang
+ */
+public class PlayLevelHandler implements ActionListener {
+   private ZombieCrushSagaMiniGame game;
+  
+   // private ZombieCrushSaga mahJong;
+    /**
+     * This constructor just stores the game for later.
+     * 
+     * @param initGame the game to update
+     */
+    public PlayLevelHandler(ZombieCrushSagaMiniGame initGame )
+    {
+        game = initGame;
+   
+     
+    }
+    
+   
+    @Override
+    public void actionPerformed(ActionEvent ae)
+    { 
+        //   ZombieCrushSagaDataModel data = (ZombieCrushSagaDataModel)game.getDataModel();
+         
+         if(game.getDataModel().lost()||game.getDataModel().won()){
+             ZombieCrushSagaDataModel data=(ZombieCrushSagaDataModel)game.getDataModel();
+             String level=data.getCurrentLevel();
+             data.setCurrentLevel(level);
+             data.setData(0, 0);
+            // UPDATE THE DATA
+             ZombieCrushSagaFileManager fileManager = game.getFileManager();
+             fileManager.loadLevel(level);
+         }
+        
+     //     data.initialBoard();
+     //     data.setStart(true);
+       //    data.endGameAsLoss();
+         //  if(game.getDataModel().inProgress())
+           //    game.getDataModel().endGameAsLoss();
+             // UPDATE THE DATA
+        //   ZombieCrushSagaFileManager fileManager = game.getFileManager();
+        //   fileManager.loadLevel(levelFile);
+           
+           game.switchToGameScreen();
+         
+    }
+
+   
+}

@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+    The properties in this file are specific to the zomjong flavor of the game.
+-->
+<properties>
+    <property_list>    
+        <property name="GAME_TITLE_TEXT"            value="Zombie Crush Saga"></property>
+        <property name="WINDOW_ICON"                value="./zomjong/Tile1.png"></property>
+        
+        <!-- BIG, FULL VIEWPORT BACKGROUND SCREEN IMAGES -->
+        <property name="SPLASH_SCREEN_IMAGE_NAME"   value="./zomjong/UIZomjongSplashBackground.png"></property>
+        <property name="GAME_BACKGROUND_IMAGE_NAME" value="./zomjong/UIZomjongGameBackground.png"></property>
+        <property name="SAGA_SCREEN_IMAGE_NAME" value="./data/parts/map1.png"></property>
+		<property name="LEVEL_SCREEN_IMAGE_NAME" value="./zomjong/LevelScreen.png"></property>
+		<property name="BACKGROUND_IMAGE_NAME"              value="./zomjong/background.png"></property>
+		<property name="BACKGROUND1_IMAGE_NAME"              value="./zomjong/background1.png"></property>
+        <!-- GAME SCREEN NORTH TOOLBAR UI IMAGES -->
+        <property name="NEW_BUTTON_IMAGE_NAME"              value="./zomjong/UIZomjongNewGame.png"></property>
+        <property name="NEW_BUTTON_MOUSE_OVER_IMAGE_NAME"   value="./zomjong/UIZomjongNewGameMouseOver.png"></property>
+        <property name="TIME_IMAGE_NAME"                    value="./zomjong/time.png"></property>
+        <property name="STATS_BUTTON_IMAGE_NAME"            value="./zomjong/UIZomjongStats.png"></property>
+        <property name="STATS_BUTTON_MOUSE_OVER_IMAGE_NAME" value="./zomjong/UIZomjongStatsMouseOver.png"></property>
+        <property name="UNDO_BUTTON_IMAGE_NAME"             value="./zomjong/UIZomjongUndo.png"></property>
+        <property name="UNDO_BUTTON_MOUSE_OVER_IMAGE_NAME"  value="./zomjong/UIZomjongUndoMouseOver.png"></property>
+        <property name="TILE_STACK_IMAGE_NAME"              value="./zomjong/UIZomjongTileStack.png"></property>
+		<property name="BACK_IMAGE_NAME"              		value="./zomjong/UIZomjongBack.png"></property>
+		<property name="BACK_MOUSE_OVER_IMAGE_NAME"         value="./zomjong/UIZomjongBackMouseOver.png"></property>
+		<property name="TILES_COUNT_CONTAINER_IMAGE_NAME"   value="./zomjong/UIZomjongTilesCountContainer.png"></property>
+		<property name="PLAY_GAME_IMAGE_NAME"              value="./zomjong/UIPlayGame.png"></property>
+		<property name="PLAY_GAME_MOUSE_OVER_IMAGE_NAME"   value="./zomjong/UIPlayGameMouseOver.png"></property>
+		<property name="QUIT_GAME_IMAGE_NAME"              value="./zomjong/UIQuitGame.png"></property>
+		<property name="QUIT_GAME_MOUSE_OVER_IMAGE_NAME"   value="./zomjong/UIQuitGameMouseOver.png"></property>
+		<property name="RESET_GAME_IMAGE_NAME"             value="./zomjong/UIResetGame.png"></property>
+		<property name="RESET_GAME_MOUSE_OVER_IMAGE_NAME"  value="./zomjong/UIResetGameMouseOver.png"></property>
+		<property name="QUIT_GAME_SAGA_IMAGE_NAME"              value="./zomjong/UIQuitSagaGame.png"></property>
+		<property name="QUIT_GAME_SAGA_MOUSE_OVER_IMAGE_NAME"   value="./zomjong/UIQuitSagaGameMouseOver.png"></property>
+		<property name="PLAY_LEVEL_IMAGE_NAME"              value="./zomjong/PlayLevel.png"></property>
+		<property name="PLAY_LEVEL_MOUSE_OVER_IMAGE_NAME"   value="./zomjong/PlayLevelMouseOver.png"></property>
+		<property name="CLOSE_LEVEL_SCORE_IMAGE_NAME"              value="./zomjong/CloseLevelScore.png"></property>
+		<property name="CLOSE_LEVEL_SCORE_MOUSE_OVER_IMAGE_NAME"   value="./zomjong/CloseLevelScoreMouseOver.png"></property>
+		<property name="UP_BUTTON_IMAGE_NAME"              value="./zomjong/up.png"></property>
+		<property name="DOWN_BUTTON_IMAGE_NAME"              value="./zomjong/down.png"></property>
+		<property name="UP_BUTTON_MOUSE_OVER_IMAGE_NAME"              value="./zomjong/upMouseOver.png"></property>
+		<property name="DOWN_BUTTON_MOUSE_OVER_IMAGE_NAME"              value="./zomjong/downMouseOver.png"></property>
+		<property name="DOWN_S_BUTTON_IMAGE_NAME"              value="./zomjong/downS.png"></property>
+		<property name="DOWN_S_BUTTON_MOUSE_OVER_IMAGE_NAME"              value="./zomjong/downSMouseOver.png"></property>
+		<property name="UP_S_BUTTON_IMAGE_NAME"              value="./zomjong/upS.png"></property>
+		<property name="UP_S_BUTTON_MOUSE_OVER_IMAGE_NAME"              value="./zomjong/upSMouseOver.png"></property>
+		<property name="QUIT_S_BUTTON_IMAGE_NAME"              value="./zomjong/quit.png"></property>
+		<property name="QUIT_S_BUTTON_MOUSE_OVER_IMAGE_NAME"              value="./zomjong/quitMouseOver.png"></property>
+		<property name="STAR_1_IMAGE_NAME"              value="./zomjong/star1.png"></property>
+		<property name="STAR_2_IMAGE_NAME"              value="./zomjong/star2.png"></property>
+	    <property name="STAR_3_IMAGE_NAME"              value="./zomjong/star3.png"></property>
+		<property name="STAR_EARN_1_IMAGE_NAME"              value="./zomjong/starEarn1.png"></property>
+		<property name="STAR_EARN_2_IMAGE_NAME"              value="./zomjong/starEarn2.png"></property>
+		<property name="STAR_EARN_3_IMAGE_NAME"              value="./zomjong/starEarn3.png"></property>
+		
+        <!-- DIALOG IMAGES -->
+        <property name="WIN_DIALOG_IMAGE_NAME"             value="./zomjong/UIZomjongWinDialog.png"></property>
+        <property name="STATS_DIALOG_IMAGE_NAME"           value="./zomjong/UIZomjongStatsDialog.png"></property>
+		<property name="LOSS_DIALOG_IMAGE_NAME"           value="./zomjong/UIZomjongLossDialog.png"></property>
+		
+        <!-- BASE TILE RENDERING IMAGES -->
+        <property name="BLANK_TILE_IMAGE_NAME"              value="./zomjong/UIZomjongBlankTile.png"></property>
+        <property name="BLANK_TILE_SELECTED_IMAGE_NAME"     value="./zomjong/UIZomjongBlankTileSelected.png"></property>
+        <property name="SCORE_BAR_IMAGE_NAME"              value="./zomjong/ScoreBar.png"></property>
+		<property name="PARTITION_IMAGE_NAME"              value="./zomjong/partition.png"></property>
+		<property name="PRINT_MODEL_IMAGE_NAME"              value="./zomjong/printModel.png"></property>
+        <!-- AUDIO FILES -->
+        <property name="SELECT_AUDIO_CUE"                   value="./zomjong/AudioZomjongSelectTile.wav"></property>
+        <property name="MATCH_AUDIO_CUE"                    value="./zomjong/AudioZomjongMatchFound.wav"></property>
+        <property name="NO_MATCH_AUDIO_CUE"                 value="./zomjong/AudioZomjongTilesDoNotMatch.wav"></property>
+        <property name="BLOCKED_TILE_AUDIO_CUE"             value="./zomjong/AudioZomjongBlockedTile.wav"></property>
+        <property name="UNDO_AUDIO_CUE"                     value="./zomjong/AudioZomjongUndo.wav"></property>
+        <property name="WIN_AUDIO_CUE"                      value="./zomjong/AudioZomjongWin.wav"></property>
+        <property name="SPLASH_SCREEN_SONG_CUE"             value="./zomjong/AudioZomjongSplashScreenSong.mid"></property>
+        <property name="GAMEPLAY_SONG_CUE"                  value="./zomjong/AudioZomjongInGameSong.mid"></property>     
+		<property name="LOSS_AUDIO_CUE"                     value="./zomjong/AudioZomjongLoss.wav"></property>  		
+		
+		<!--Level -->
+		<property name="LEVEL_IMAGE_NAME"              value="./zomjong/Level.png"></property>
+        <property name="LEVEL_MOUSE_OVER_IMAGE_NAME"   value="./zomjong/LevelMouseOver.png"></property>
+    </property_list>
+    <property_options_list>
+        <property_options name="LEVEL_OPTIONS">
+            <option>./zomjong/Coliseum.zom</option>
+            <option>./zomjong/TriPeak.zom</option>
+            <option>./zomjong/Turtle.zom</option>
+            <option>./zomjong/Quilt.zom</option>
+			<option>./zomjong/Bagua.zom</option>
+        </property_options>
+        <property_options name="LEVEL_IMAGE_OPTIONS">
+            <option>./zomjong/UIPlayGame.png</option>
+            <option>./zomjong/LevelTriPeak.png</option>
+            <option>./zomjong/LevelTurtle.png</option>
+            <option>./zomjong/LevelQuilt.png</option>
+			<option>./zomjong/LevelBagua.png</option>
+        </property_options>
+        <property_options name="LEVEL_MOUSE_OVER_IMAGE_OPTIONS">
+            <option>./zomjong/LevelColiseumMouseOver.png</option>
+            <option>./zomjong/LevelTriPeakMouseOver.png</option>
+            <option>./zomjong/LevelTurtleMouseOver.png</option>
+            <option>./zomjong/LevelQuiltMouseOver.png</option>
+			  <option>./zomjong/LevelBaguaMouseOver.png</option>
+        </property_options>
+        <!-- THERE WILL ONLY BE ONE OF EACH OF THESE
+             AND THEY CAN BE MATCHED WITH EACH OTHER -->
+        <property_options name="TYPE_S_TILES">
+             <option>./zomjong/TileNightPlantScaredyShroomStriped.png</option>
+            <option>./zomjong/TileNightPlantHypnoShroomStriped.png</option>
+            <option>./zomjong/TileDayPlantSunflowerStriped.png</option>
+            <option>./zomjong/TileNightPlantSunShroomStriped.png</option>
+            <option>./zomjong/TileDayPlantPeashooterStriped.png</option>
+            <option>./zomjong/TileDayPlantSnowPeaStriped.png</option>
+        </property_options>
+        <!-- THERE WILL ONLY BE ONE OF EACH OF THESE
+             AND THEY CAN BE MATCHED WITH EACH OTHER -->
+        <property_options name="TYPE_W_TILES">
+             <option>./zomjong/TileNightPlantScaredyShroomWrapped.png</option>
+            <option>./zomjong/TileNightPlantHypnoShroomWrapped.png</option>
+            <option>./zomjong/TileDayPlantSunflowerWrapped.png</option>
+            <option>./zomjong/TileNightPlantSunShroomWrapped.png</option>
+            <option>./zomjong/TileDayPlantPeashooterWrapped.png</option>
+            <option>./zomjong/TileDayPlantSnowPeaWrapped.png</option>
+            
+        </property_options>
+        <!-- THERE WILL BE FOUR OF EACH OF TEHSE AND
+            THESE CAN ONLY MATCH WITH THEMSELVES -->
+        <property_options name="TYPE_C_TILES">
+            <option>./zomjong/TileNightPlantScaredyShroom.png</option>
+            <option>./zomjong/TileNightPlantHypnoShroom.png</option>
+            <option>./zomjong/TileDayPlantSunflower.png</option>
+            <option>./zomjong/TileNightPlantSunShroom.png</option>
+            <option>./zomjong/TileDayPlantPeashooter.png</option>
+            <option>./zomjong/TileDayPlantSnowPea.png</option>
+            
+        </property_options>
+		
+		<property_options name="TYPE_G_TILES">
+            <option>./zomjong/TileNightPlantScaredyShroomGlass.png</option>
+            <option>./zomjong/TileNightPlantHypnoShroomGlass.png</option>
+            <option>./zomjong/TileDayPlantSunflowerGlass.png</option>
+            <option>./zomjong/TileNightPlantSunShroomGlass.png</option>
+            <option>./zomjong/TileDayPlantPeashooterGlass.png</option>
+            <option>./zomjong/TileDayPlantSnowPeaGlass.png</option>
+            
+        </property_options>
+		
+		<property_options name="TYPE_COLOR_TILES">
+            <option>./zomjong/ColorCandy.png</option>
+           
+            
+        </property_options>
+    </property_options_list>
+</properties>
