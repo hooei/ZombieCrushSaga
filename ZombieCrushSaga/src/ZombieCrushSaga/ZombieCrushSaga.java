@@ -76,7 +76,8 @@ public class ZombieCrushSaga
         GAME_FLAVOR_FILE_NAME,
         RECORD_FILE_NAME,
         BACKGROUND_IMAGE_NAME,
-         BACKGROUND1_IMAGE_NAME,
+        BACKGROUND1_IMAGE_NAME,
+        
         /* DIRECTORIES FOR FILE LOADING */
         AUDIO_PATH,
         DATA_PATH,
@@ -141,6 +142,11 @@ public class ZombieCrushSaga
         STAR_EARN_1_IMAGE_NAME,
         STAR_EARN_2_IMAGE_NAME,
         STAR_EARN_3_IMAGE_NAME,
+        BACKGROUND_IMAGE_TYPE_ZERO,
+        BACKGROUND_IMAGE_TYPE_ONE,
+        SMASH_IMAGE,
+        SMASH_IMAGE_TYPE_ONE,
+        
         // AND THE DIALOGS
         STATS_DIALOG_IMAGE_NAME,
         WIN_DIALOG_IMAGE_NAME,
@@ -158,8 +164,8 @@ public class ZombieCrushSaga
         TYPE_W_TILES,
         TYPE_S_TILES,
         TYPE_C_TILES,
-         TYPE_G_TILES,
-          TYPE_COLOR_TILES,
+        TYPE_G_TILES,
+        TYPE_COLOR_TILES,
         /* AUDIO CUES */
         SELECT_AUDIO_CUE,
         MATCH_AUDIO_CUE,
@@ -177,6 +183,6 @@ public class ZombieCrushSaga
         RESET_GAME_IMAGE_NAME,
         RESET_GAME_MOUSE_OVER_IMAGE_NAME,
         QUIT_GAME_SAGA_IMAGE_NAME,
-         QUIT_GAME_SAGA_MOUSE_OVER_IMAGE_NAME,
+        QUIT_GAME_SAGA_MOUSE_OVER_IMAGE_NAME,
     }
 }

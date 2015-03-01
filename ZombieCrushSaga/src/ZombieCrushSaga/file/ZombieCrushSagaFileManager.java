@@ -165,7 +165,6 @@ public class ZombieCrushSagaFileManager {
             out.write(bytes, 0, bytes.length);
             out.close();
         } catch (FileNotFoundException ex) {
-            System.out.println("File not found");
             ex.printStackTrace();
         } catch (IOException ex) {
             ex.printStackTrace();

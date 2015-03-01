@@ -40,7 +40,10 @@ public class ZombieCrushSagaDataModel extends MiniGameDataModel {
     // THIS STORES THE TILES ON THE GRID DURING THE GAME
     private ArrayList<ZombieCrushSagaTile>[][] tileGrid;
 
+    //THIS STORE THE CURRENT TITLES ONE THE GRID AFTER BACK TO SAGA SCREEN
     private ArrayList<ZombieCrushSagaTile>[][] currentGrid;
+    
+    
     // THESE ARE THE TILES THE PLAYER HAS MATCHED
     private ArrayList<ZombieCrushSagaTile> stackTiles;
     //   using to fill
@@ -84,7 +87,7 @@ public class ZombieCrushSagaDataModel extends MiniGameDataModel {
     private int[] Bom;
     private ArrayList<ZombieCrushSagaTile> jellyTiles; //  jerry
     private ArrayList<ZombieCrushSagaTile> backTiles;
-    private int[][] score;
+    private int[][] score; // store the score of each title
     private ZombieCrushSagaTile smarsh;
     private boolean secondBom;
     private boolean bom;
@@ -100,7 +103,7 @@ public class ZombieCrushSagaDataModel extends MiniGameDataModel {
         // KEEP THE GAME FOR LATER
         miniGame = initMiniGame;
         currentScore = 0;
-        this.currentMoves = 0;
+        currentMoves = 0;
         currentNeedToMove = new ArrayList<int[]>();
         // INIT THESE FOR HOLDING MATCHED AND MOVING TILES
         stackTiles = new ArrayList();
@@ -122,7 +125,6 @@ public class ZombieCrushSagaDataModel extends MiniGameDataModel {
         }
 
         colorTiles = new ArrayList<ZombieCrushSagaTile>();
-
         jellyTiles = new ArrayList<ZombieCrushSagaTile>();
         backTiles = new ArrayList<ZombieCrushSagaTile>();
         testTiles = new ArrayList[6];
@@ -374,7 +376,6 @@ public class ZombieCrushSagaDataModel extends MiniGameDataModel {
         {
             addToPos = i;
             for (int j = 0; j < 50; j++) {
-
                 String imgFile = imgPath + typeSTiles.get(i);
                 sT = initTileSpriteType(imgFile, TILE_SPRITE_TYPE_PREFIX + i);
                 initTile(sT, TILE_S_TYPE);
@@ -387,7 +388,6 @@ public class ZombieCrushSagaDataModel extends MiniGameDataModel {
         {
             addToPos = i;
             for (int j = 0; j < 50; j++) {
-
                 String imgFile = imgPath + typeWTiles.get(i);
                 sT = initTileSpriteType(imgFile, TILE_SPRITE_TYPE_PREFIX + i);
                 initTile(sT, TILE_W_TYPE);
@@ -409,7 +409,6 @@ public class ZombieCrushSagaDataModel extends MiniGameDataModel {
             String imgFile = imgPath + typeCTiles.get(i);
             addToPos = i;
             sT = initTileSpriteType(imgFile, TILE_SPRITE_TYPE_PREFIX + i);
-
             for (int j = 0; j < 200; j++) {
                 initTile(sT, TILE_C_TYPE);
             }
@@ -419,7 +418,7 @@ public class ZombieCrushSagaDataModel extends MiniGameDataModel {
         spriteTypeID = 0;
         for (int i = 0; i < 200; i++) // 100
         {
-            String imgFile = imgPath + "./zomjong/background.png";
+            String imgFile = imgPath + props.getProperty(ZombieCrushSagaPropertyType.BACKGROUND_IMAGE_TYPE_ZERO);
             addToPos = i;
             sT = initTileSpriteType(imgFile, TILE_SPRITE_TYPE_PREFIX + 10);
             initTile(sT, BACK_GROUND_TYPE);
@@ -429,15 +428,15 @@ public class ZombieCrushSagaDataModel extends MiniGameDataModel {
         spriteTypeID = 0;
         for (int i = 0; i < 200; i++) 
         {
-            String imgFile = imgPath + "./zomjong/background1.png";
+            String imgFile = imgPath + props.getProperty(ZombieCrushSagaPropertyType.BACKGROUND_IMAGE_TYPE_ONE);
             addToPos = i;
             sT = initTileSpriteType(imgFile, TILE_SPRITE_TYPE_PREFIX + 11);
             initTile(sT, BACK_GROUND1_TYPE);
         }
         this.addOther = 9;
-        String img = imgPath + "./zomjong/smash.png";
-        sT = initTileSpriteType(img, "SMASH");
-        initTile(sT, "SMASH");
+        String img = imgPath +props.getProperty(ZombieCrushSagaPropertyType.SMASH_IMAGE);
+        sT = initTileSpriteType(img, SMASH);
+        initTile(sT, SMASH);
     }
 
     public void addTestTiles() {
@@ -473,7 +472,7 @@ public class ZombieCrushSagaDataModel extends MiniGameDataModel {
             this.addOther = 7;
             for (int i = 0; i < (201 - jellyTiles.size()); i++) //  using to fill empty
             {
-                String imgFile = imgPath + "./zomjong/background.png";
+                String imgFile = imgPath + props.getProperty(ZombieCrushSagaPropertyType.BACKGROUND_IMAGE_TYPE_ZERO);
                 addToPos = i;
                 sT = initTileSpriteType(imgFile, TILE_SPRITE_TYPE_PREFIX + 10);
                 initTile(sT, BACK_GROUND_TYPE);
@@ -483,7 +482,7 @@ public class ZombieCrushSagaDataModel extends MiniGameDataModel {
 
             for (int i = 0; i < (210 - backTiles.size()); i++) //  using to fill empty
             {
-                String imgFile = imgPath + "./zomjong/background1.png";
+                String imgFile = imgPath + props.getProperty(ZombieCrushSagaPropertyType.BACKGROUND_IMAGE_TYPE_ONE);
                 addToPos = i;
                 sT = initTileSpriteType(imgFile, TILE_SPRITE_TYPE_PREFIX + 11);
                 initTile(sT, BACK_GROUND1_TYPE);
@@ -713,11 +712,8 @@ public class ZombieCrushSagaDataModel extends MiniGameDataModel {
                     for (int h = currentGrid[i][j].size() - 1; h >= 0; h--) {
                         ZombieCrushSagaTile tile = currentGrid[i][j].remove(h);
                         tile.setState(VISIBLE_STATE);
-                        // PUT IT IN THE GRID
                         tile.setGridCell(i, j);
                         tileGrid[i][j].add(tile);
-                    // WE'LL ANIMATE IT GOING TO THE GRID, SO FIGURE
-                        // OUT WHERE IT'S GOING AND GET IT MOVING
                         float x = calculateTileXInGrid(i, 0);
                         float y = calculateTileYInGrid(j, 0);
                         tile.setTarget(x, y);
@@ -860,11 +856,7 @@ public class ZombieCrushSagaDataModel extends MiniGameDataModel {
     public void sleep(int i) {
         stop = true;
         long time1 = System.currentTimeMillis() + i;
-        while (System.currentTimeMillis() < time1) {
-          //   System.out.println(System.currentTimeMillis());
-
-        }
-
+        while (System.currentTimeMillis() < time1) {}
         stop = false;
     }
     // GAME DATA SERVICE METHODS
@@ -1500,13 +1492,6 @@ public class ZombieCrushSagaDataModel extends MiniGameDataModel {
 
     }
 
-    /**
-     * This method attempts to select the selectTile argument. Note that this
-     * may be the first or second selected tile. If a tile is already selected,
-     * it will attempt to process a match/move.
-     *
-     * @param selectTile The tile to select.
-     */
     public void addMoves() {
         this.currentMoves++;
     }
@@ -1949,7 +1934,6 @@ public class ZombieCrushSagaDataModel extends MiniGameDataModel {
         this.clearJerry(col, row);
         double i = speed;
         speed = 10;
-        int z = stack2.size();
         float targetX;
         float targetY;
         if (tile1.getTileType().equals(backTiles.get(0).getTileType())) {
@@ -2141,8 +2125,7 @@ public class ZombieCrushSagaDataModel extends MiniGameDataModel {
                     ZombieCrushSagaTile tile1 = backTiles.remove(backTiles.size() - 1); // set jelly
                     tileGrid[i][j].add(tile1);
                     tile1.setGridCell(i, j);
-                    // WE'LL ANIMATE IT GOING TO THE GRID, SO FIGURE
-                    // OUT WHERE IT'S GOING AND GET IT MOVING
+
                     float x1 = calculateTileXInGrid(i, 0);
                     float y1 = calculateTileYInGrid(j, 0);
                     tile1.setTarget(x1, y1);
@@ -2164,6 +2147,7 @@ public class ZombieCrushSagaDataModel extends MiniGameDataModel {
 
             }
         }
+        // check to and adjust the type of titles to ignore matching
         for (int i = 0; i < tileGrid.length; i++) {
             for (int j = tileGrid[0].length - 1; j >= 0; j--) {
                 if (tileGrid[i][j].size() == 1 || tileGrid[i][j].size() == 2) {

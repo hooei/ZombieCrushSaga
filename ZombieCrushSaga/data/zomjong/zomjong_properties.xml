@@ -66,17 +66,15 @@
         <property name="SCORE_BAR_IMAGE_NAME"              value="./zomjong/ScoreBar.png"></property>
 		<property name="PARTITION_IMAGE_NAME"              value="./zomjong/partition.png"></property>
 		<property name="PRINT_MODEL_IMAGE_NAME"              value="./zomjong/printModel.png"></property>
-        <!-- AUDIO FILES -->
-        <property name="SELECT_AUDIO_CUE"                   value="./zomjong/AudioZomjongSelectTile.wav"></property>
-        <property name="MATCH_AUDIO_CUE"                    value="./zomjong/AudioZomjongMatchFound.wav"></property>
-        <property name="NO_MATCH_AUDIO_CUE"                 value="./zomjong/AudioZomjongTilesDoNotMatch.wav"></property>
-        <property name="BLOCKED_TILE_AUDIO_CUE"             value="./zomjong/AudioZomjongBlockedTile.wav"></property>
-        <property name="UNDO_AUDIO_CUE"                     value="./zomjong/AudioZomjongUndo.wav"></property>
-        <property name="WIN_AUDIO_CUE"                      value="./zomjong/AudioZomjongWin.wav"></property>
-        <property name="SPLASH_SCREEN_SONG_CUE"             value="./zomjong/AudioZomjongSplashScreenSong.mid"></property>
-        <property name="GAMEPLAY_SONG_CUE"                  value="./zomjong/AudioZomjongInGameSong.mid"></property>     
-		<property name="LOSS_AUDIO_CUE"                     value="./zomjong/AudioZomjongLoss.wav"></property>  		
 		
+		<!-- BACKGROUND IMAGE -->
+		<property name="BACKGROUND_IMAGE_TYPE_ZERO"              value="./zomjong/background.png"></property>
+		<property name="BACKGROUND_IMAGE_TYPE_ONE"              value="./zomjong/background1.png"></property>
+		
+		
+		<!-- SMASH IMAGE -->
+			<property name="SMASH_IMAGE"              value="./zomjong/smash.png"></property>
+			<property name="SMASH_IMAGE_TYPE_ONE"              value="./zomjong/smash1.png"></property>
 		<!--Level -->
 		<property name="LEVEL_IMAGE_NAME"              value="./zomjong/Level.png"></property>
         <property name="LEVEL_MOUSE_OVER_IMAGE_NAME"   value="./zomjong/LevelMouseOver.png"></property>

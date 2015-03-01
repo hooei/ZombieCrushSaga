@@ -143,10 +143,10 @@ public class ZombieCrushSagaMiniGame extends MiniGame {
     }
 
     public void smashValid() {
-        guiButtons.get(SMASH_TYPE1).setState(VISIBLE_STATE);
-        guiButtons.get(SMASH_TYPE1).setEnabled(true);
-        guiButtons.get(SMASH_TYPE).setState(INVISIBLE_STATE);
-        guiButtons.get(SMASH_TYPE).setEnabled(false);
+        guiButtons.get(SMASH_2_TYPE).setState(VISIBLE_STATE);
+        guiButtons.get(SMASH_2_TYPE).setEnabled(true);
+        guiButtons.get(SMASH_1_TYPE).setState(INVISIBLE_STATE);
+        guiButtons.get(SMASH_1_TYPE).setEnabled(false);
         PropertiesManager props = PropertiesManager.getPropertiesManager();
         Toolkit toolkit = Toolkit.getDefaultToolkit();
         String imgPath = props.getProperty(ZombieCrushSagaPropertyType.IMG_PATH);
@@ -158,16 +158,16 @@ public class ZombieCrushSagaMiniGame extends MiniGame {
     }
 
     public void smashInvalid() {
-        guiButtons.get(SMASH_TYPE).setState(VISIBLE_STATE);
-        guiButtons.get(SMASH_TYPE).setEnabled(true);
-        guiButtons.get(SMASH_TYPE1).setState(INVISIBLE_STATE);
-        guiButtons.get(SMASH_TYPE1).setEnabled(false);
+        guiButtons.get(SMASH_1_TYPE).setState(VISIBLE_STATE);
+        guiButtons.get(SMASH_1_TYPE).setEnabled(true);
+        guiButtons.get(SMASH_2_TYPE).setState(INVISIBLE_STATE);
+        guiButtons.get(SMASH_2_TYPE).setEnabled(false);
         this.canvas.setCursor(Cursor.getDefaultCursor());
         this.smash = false;
     }
 
     public void processSmash() {
-        if (guiButtons.get(SMASH_TYPE).getState().equals(MOUSE_OVER_STATE)) {
+        if (guiButtons.get(SMASH_1_TYPE).getState().equals(MOUSE_OVER_STATE)) {
             this.smashValid();
         } else {
             this.smashInvalid();
@@ -181,8 +181,8 @@ public class ZombieCrushSagaMiniGame extends MiniGame {
         guiButtons.get(BACK_BUTTON_TYPE).setState(VISIBLE_STATE);
         guiButtons.get(BACK_BUTTON_TYPE).setEnabled(true);
 
-        guiButtons.get(SMASH_TYPE).setState(VISIBLE_STATE);
-        guiButtons.get(SMASH_TYPE).setEnabled(true);
+        guiButtons.get(SMASH_1_TYPE).setState(VISIBLE_STATE);
+        guiButtons.get(SMASH_1_TYPE).setEnabled(true);
 
         guiDecor.get(SCORE_BAR_TYPE).setState(VISIBLE_STATE);
         guiDecor.get(SCORE_BAR_TYPE).setEnabled(true);
@@ -514,27 +514,27 @@ public class ZombieCrushSagaMiniGame extends MiniGame {
         s = new Sprite(sT, 0, BACK_BUTTON_Y, 0, 0, INVISIBLE_STATE);
         guiButtons.put(BACK_BUTTON_TYPE, s);
 
-        // THEN THE BACK BUTTON
-        String smashButton = "./zomjong/smash.png";
-        sT = new SpriteType(SMASH_TYPE);
+        // THEN THE TYPE ZERO SMASH BUTTON
+        String smashButton = props.getProperty(ZombieCrushSagaPropertyType.SMASH_IMAGE);;
+        sT = new SpriteType(SMASH_1_TYPE);
         img = loadImage(imgPath + smashButton);
         sT.addState(VISIBLE_STATE, img);
 
-        img = loadImage(imgPath + "./zomjong/smash.png");
+        img = loadImage(imgPath + props.getProperty(ZombieCrushSagaPropertyType.SMASH_IMAGE));
         sT.addState(MOUSE_OVER_STATE, img);
         s = new Sprite(sT, 1000, 600, 0, 0, INVISIBLE_STATE);
-        guiButtons.put(SMASH_TYPE, s);
+        guiButtons.put(SMASH_1_TYPE, s);
 
-        // THEN THE BACK BUTTON
-        String smashButton1 = "./zomjong/smash1.png";
-        sT = new SpriteType(SMASH_TYPE1);
+        // THEN THE TYPE ONE SMASH BUTTON
+        String smashButton1 = props.getProperty(ZombieCrushSagaPropertyType.SMASH_IMAGE_TYPE_ONE);
+        sT = new SpriteType(SMASH_2_TYPE);
         img = loadImage(imgPath + smashButton1);
         sT.addState(VISIBLE_STATE, img);
 
-        img = loadImage(imgPath + "./zomjong/smash1.png");
+        img = loadImage(imgPath +  props.getProperty(ZombieCrushSagaPropertyType.SMASH_IMAGE_TYPE_ONE));
         sT.addState(MOUSE_OVER_STATE, img);
         s = new Sprite(sT, 1000, 600, 0, 0, INVISIBLE_STATE);
-        guiButtons.put(SMASH_TYPE1, s);
+        guiButtons.put(SMASH_2_TYPE, s);
 
         //  print moves
         String moves = props.getProperty(ZombieCrushSagaPropertyType.PRINT_MODEL_IMAGE_NAME);
@@ -634,8 +634,8 @@ public class ZombieCrushSagaMiniGame extends MiniGame {
         sT = new SpriteType(WIN_DIALOG_TYPE);
         img = loadImageWithColorKey(imgPath + winDisplay, COLOR_KEY);
         sT.addState(VISIBLE_STATE, img);
-        x = (data.getGameWidth() / 2) - (img.getWidth(null) / 2);
-        y = (data.getGameHeight() / 2) - (img.getHeight(null) / 2);
+        x = (data.getGameWidth() / 2) - (img.getWidth() / 2);
+        y = (data.getGameHeight() / 2) - (img.getHeight() / 2);
         s = new Sprite(sT, x, y, 0, 0, INVISIBLE_STATE);
         guiDialogs.put(WIN_DIALOG_TYPE, s);
 
@@ -644,8 +644,8 @@ public class ZombieCrushSagaMiniGame extends MiniGame {
         sT = new SpriteType(LOSS_DIALOG_TYPE);
         img = loadImageWithColorKey(imgPath + lossDisplay, COLOR_KEY);
         sT.addState(VISIBLE_STATE, img);
-        x = (data.getGameWidth() / 2) - (img.getWidth(null) / 2);
-        y = (data.getGameHeight() / 2) - (img.getHeight(null) / 2);
+        x = (data.getGameWidth() / 2) - (img.getWidth() / 2);
+        y = (data.getGameHeight() / 2) - (img.getHeight() / 2);
         s = new Sprite(sT, x, y, 0, 0, INVISIBLE_STATE);
         guiDialogs.put(LOSS_DIALOG_TYPE, s);
         ((ZombieCrushSagaDataModel) data).initTiles();
@@ -682,8 +682,8 @@ public class ZombieCrushSagaMiniGame extends MiniGame {
         guiButtons.get(BACK_BUTTON_TYPE).setActionListener(bh);
 
         SmashHandler sh = new SmashHandler(this);
-        guiButtons.get(SMASH_TYPE).setActionListener(sh);
-        guiButtons.get(SMASH_TYPE1).setActionListener(sh);
+        guiButtons.get(SMASH_1_TYPE).setActionListener(sh);
+        guiButtons.get(SMASH_2_TYPE).setActionListener(sh);
         PlayLevelHandler plh = new PlayLevelHandler(this);
         guiButtons.get(PLAY_LEVEL_BUTTON_TYPE).setActionListener(plh);
 
@@ -796,11 +796,11 @@ public class ZombieCrushSagaMiniGame extends MiniGame {
         guiButtons.get(CLOSE_LEVEL_SCORE_BUTTON_TYPE).setEnabled(false);
         guiButtons.get(BACK_BUTTON_TYPE).setState(INVISIBLE_STATE);
         guiButtons.get(BACK_BUTTON_TYPE).setEnabled(false);
-        guiButtons.get(SMASH_TYPE).setState(INVISIBLE_STATE);
-        guiButtons.get(SMASH_TYPE).setEnabled(false);
+        guiButtons.get(SMASH_1_TYPE).setState(INVISIBLE_STATE);
+        guiButtons.get(SMASH_1_TYPE).setEnabled(false);
 
-        guiButtons.get(SMASH_TYPE1).setState(INVISIBLE_STATE);
-        guiButtons.get(SMASH_TYPE1).setEnabled(false);
+        guiButtons.get(SMASH_2_TYPE).setState(INVISIBLE_STATE);
+        guiButtons.get(SMASH_2_TYPE).setEnabled(false);
         guiButtons.get(PLAY_GAME_BUTTON_TYPE).setState(INVISIBLE_STATE);
         guiButtons.get(PLAY_GAME_BUTTON_TYPE).setEnabled(false);
         guiButtons.get(RESET_GAME_BUTTON_TYPE).setState(INVISIBLE_STATE);

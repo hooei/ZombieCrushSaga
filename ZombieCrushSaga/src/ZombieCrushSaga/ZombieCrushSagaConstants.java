@@ -8,7 +8,7 @@ import java.awt.Font;
  * use to control the flow of the application. Note that these control types and
  * states are NOT flavor-specific.
  *
- * @author Richard McKenna,Zhenjin Wang
+ * @author Zhenjin Wang,Richard McKenna
  */
 public class ZombieCrushSagaConstants {
     // WE ONLY HAVE A LIMITIED NUMBER OF UI COMPONENT TYPES IN THIS APP
@@ -56,8 +56,8 @@ public class ZombieCrushSagaConstants {
     public static final String STAR_EARN_1_TYPE = "STAR_EARN_1_TYPE";
     public static final String STAR_EARN_2_TYPE = "STAR_EARN_2_TYPE";
     public static final String STAR_EARN_3_TYPE = "STAR_EARN_3_TYPE";
-    public static final String SMASH_TYPE = "SMASH_TYPE";
-    public static final String SMASH_TYPE1 = "SMASH_TYPE1";
+    public static final String SMASH_1_TYPE = "SMASH_1_TYPE";
+    public static final String SMASH_2_TYPE = "SMASH_2_TYPE";
     // DIALOG TYPES
     public static final String STATS_DIALOG_TYPE = "STATS_DIALOG_TYPE";
     public static final String WIN_DIALOG_TYPE = "WIN_DIALOG_TYPE";
@@ -154,10 +154,9 @@ public class ZombieCrushSagaConstants {
     public static final Font DEBUG_TEXT_FONT = new Font(Font.MONOSPACED, Font.BOLD, 14);
     public static final Font STATS_FONT = new Font(Font.MONOSPACED, Font.BOLD, 24);
 
-    // AND AUDIO STUFF
-    public static final String SUCCESS_AUDIO_TYPE = "SUCCESS_AUDIO_TYPE";
-    public static final String FAILURE_AUDIO_TYPE = "FAILURE_AUDIO_TYPE";
-    public static final String THEME_SONG_TYPE = "THEME_SONG_TYPE";
+    // SMASH
+    public static final String SMASH = "SMASH";
+   
     // level target
     public static final int Level_moves[] = {6, 15, 18, 15, 20, 25, 50, 20, 25, 40};
     public static final int Level_1_Star[] = {300, 1900, 4000, 4500, 5000, 9000, 60000, 20000, 22000, 40000};

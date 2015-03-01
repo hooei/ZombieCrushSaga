@@ -5,7 +5,6 @@
 package ZombieCrushSaga.events;
 
 import static ZombieCrushSaga.ZombieCrushSagaConstants.SAGA_SCREEN_STATE;
-import ZombieCrushSaga.data.ZombieCrushSagaDataModel;
 import ZombieCrushSaga.ui.ZombieCrushSagaMiniGame;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;

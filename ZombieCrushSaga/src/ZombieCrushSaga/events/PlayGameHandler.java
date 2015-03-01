@@ -8,6 +8,7 @@ import ZombieCrushSaga.data.ZombieCrushSagaDataModel;
 import ZombieCrushSaga.ui.ZombieCrushSagaMiniGame;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import static ZombieCrushSaga.ZombieCrushSagaConstants.*;
 
 /**
  * @author zhenjin wang
@@ -23,7 +24,7 @@ public class PlayGameHandler implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent ae) {
         ZombieCrushSagaDataModel data = (ZombieCrushSagaDataModel) miniGame.getDataModel();
-        if (miniGame.isCurrentScreenState("LEVEL_SCREEN_STATE")) {
+        if (miniGame.isCurrentScreenState(LEVEL_SCREEN_STATE)) {
             data.endGameAsLoss();
         }
         miniGame.switchToSagaScreen();
